@@ -1,0 +1,129 @@
+#root {
+  max-width: 1280px;
+  /* margin: 0 auto; */
+  padding:0 3.5rem;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+body{
+  margin: 0;
+  border-radius: 3px;
+  background-color: var(--black);
+  color: white;
+}
+
+
+/* HEADER */
+
+.Header{
+  display: flex;
+  flex-direction: column  ;
+  align-items: start;
+  justify-content: center;
+}
+.Header h1{
+  padding: 3px;
+  font-family:"Playfair Display", serif;
+  /* background-color: var(--pink); */
+  color: var(--white);
+  text-shadow:0 0 6px var(--pink);
+  border-bottom: 2px solid rgba(43, 42, 42, 0.7);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.Header p {
+  font-family:"Playfair Display", serif;
+  color: var(--white);
+  text-align: start;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+ul{
+  margin-top: 50px;
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+li{
+  list-style: none;
+}
+
+li::before{
+  content: '🔹';
+}
+
+.mainHeader{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 10px;
+}
+
+.mainHeader img{
+  max-width: 100%;
+}
+
+/*Post Container */
+.posts-container{
+  max-width: fit-content;
+  padding-bottom: 10px;
+}
+
+/* Footer */
+
+.footer{
+  background-color: var(--black);
+  color: var(--white);
+  
+}
+
+/*Home page  */
+.posts-container{
+  padding: 2px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+}
+
+.post-card{
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  background-color: var(--blue);
+  color: var(--pink);
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.post-card:hover{
+  box-shadow: 0 0 3px 3px var(--black);
+}
+
+.post-card h2{
+  border-bottom: 1px solid var(--white);
+  font-family:'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  display: inline-block;
+  height: 50%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 18px;
+  width: 100%;
+}
+
+.contactUs{
+  display: flex;
+  min-height: 50vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.allPosts,.home{
+  min-height: 48vh;
+}
+
