@@ -42,7 +42,9 @@ body{
 }
 
 ul{
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  padding: 0;
+  margin: 0;
   display: flex;
   gap: 20px;
   font-size: 20px;
@@ -50,8 +52,16 @@ ul{
   justify-content: center;
 }
 
+.navigation{
+  font-size: 1rem;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+
 li{
   list-style: none;
+  font-size: 1.rem;
 }
 
 li::before{

@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root{
   --blue: #2F3C7E;
   --pink: #FBEAEB;

@@ -8,6 +8,7 @@ import Footer from './components/footer';
 import HomePage from './pages/HomePage';
 import ContactUs from './pages/contactUs';
 import AllPosts from './pages/allPosts';
+import Navigation from './components/navigation';
 
 const routes = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <>
+    <Navigation/>
         <Header />
         <RouterProvider router={routes} />
         <Footer />
