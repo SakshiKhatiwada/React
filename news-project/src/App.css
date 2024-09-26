@@ -65,8 +65,11 @@ li{
 }
 
 li::before{
-  content: '🔹';
+  content: '\25C7';
+  color: var(--nav);
+  margin-right: 5px;
 }
+
 
 .mainHeader{
   display: grid;
@@ -137,3 +140,16 @@ li::before{
   min-height: 48vh;
 }
 
+.navigation{
+  width: 100%;
+  color: rgb(78, 48, 139);
+  padding: 10px;
+  margin: 0;
+  padding-bottom: 20px;
+  background-color: inherit;
+  
+}
+
+.icon{
+  font-size:2rem;
+}

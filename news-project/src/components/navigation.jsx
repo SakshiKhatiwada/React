@@ -1,9 +1,8 @@
-import { FaGlobe } from "react-icons/fa";
-
+import { FaGlobe } from "react-icons/fa6";
 const Navigation = () => {
   return (
     <div className="navigation">
-    <FaGlobe />
+    <FaGlobe className="icon"/>
     <nav className="navBar">
     <ul>
       <li><a href='/'>Home</a></li>

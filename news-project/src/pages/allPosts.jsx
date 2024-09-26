@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect,  useRef } from 'react';
 
 let base_url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1e99ea087bdb4ab38f184cb675d02834";
 
@@ -6,7 +6,9 @@ let base_url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1e99ea087
 
 export const Func = () => {
    const [posts, setPosts] = useState([]);
-  let count = 0;
+//   let count = 0; -> not a better approach to use this as a key.
+const keyref = useRef(0);
+// console.log(keyref, keyref.current) ;
 
   useEffect(() => {
       fetch(`${base_url}`)
@@ -26,7 +28,10 @@ export const Func = () => {
       <div className="posts-container">
           {posts.map((post) => {
               return (
-                  <div className="post-card" key={++count}>
+                  <div className="post-card" key={ ++keyref.current}>
+                    {/* {
+                        console.log('id:',post?.source?.id, keyref.current)
+                    } */}
                       <h2 className="post-title">{post?.title ?? "missing"}</h2>
                       
                       <p className="post-body">author: {post?.author ?? "missing"}</p>
