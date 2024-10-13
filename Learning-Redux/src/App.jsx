@@ -1,17 +1,25 @@
 import './App.css'
 import AddToDoForm from './redux/AddToDoForm';
 import ToDoList from './redux/ToDoList';
+import TotalCompleteItems from './redux/TotalCompleteItems';
 
 function App() {
 
   return (
-    <>
-      <h1>Add</h1>
-      <AddToDoForm/>
-      <hr/>
-      <h1>List</h1>
+    <main className='main'>
+     <section>
+     <h1>Add ToDos</h1>
+     <AddToDoForm/>
+     </section>
+      <section>
+      <h1>Lists</h1>
       <ToDoList/>
-    </>
+      </section>
+      <hr/>
+      <section>
+        <TotalCompleteItems/>
+      </section>
+    </main>
   )
 }
 
