@@ -1,0 +1,112 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* SECTION main */
+.main{
+  margin: 10px;
+  padding: 30px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  box-shadow: 0 0 4px 4px rgba(184, 182, 182, 0.155);
+}
+
+.main section{
+  margin: 10px auto;
+  padding: 20px;
+}
+
+/* SECTION Form*/
+h1{
+  text-align: center;
+  font-size: 32px;
+}
+.form {
+  width: 500px;
+  margin: 10px auto;
+}
+
+.form input {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.616);
+}
+
+button[type="submit"], button{
+  background-color: rgba(13, 124, 50, 0.753);
+  padding: 10px 15px;
+  border: 1px solid rgba(13, 124, 50, 0.825);
+  color: white;
+  border-radius: 10px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.deleteButton{
+  padding: 5px 10px;
+}
+
+
+
+/* SECTION ToDoList */
+ul{
+  background-color: #e7e5e5;
+  width: 500px;
+  min-height: 300px;
+  margin: auto;
+  padding: 20px;
+  list-style: none;
+  border: 1px solid gray;
+  border-radius: 13px;
+  
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+  /* align-items: center; */
+}
+
+li{
+  width: 100%;
+  /* max-width: fit-content; */
+  /* background-color: rgba(0, 79, 128, 0.414); */
+  /* border: 1px solid rgba(7, 71, 7, 0.797); */
+  padding: 5px 30px;
+  
+  /* border-radius: 10px; */
+  /* transition: all 0.1s ease-in-out ; */
+
+}
+
+/* li:hover{
+  transform: scale(1.2);
+  box-shadow: 2px 2px 1px 1px rgba(7, 85, 85, 0.107), -2px -2px 1px 1px rgba(0, 128, 128, 0.123);
+  outline: 1px solid green;
+} */
+
+.list-items{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+/* .list-items:last-child::after{
+  content: '\2717';
+  color: red;
+}.list-items:last-child::after{
+  content: '\2713';
+  color: green;
+} */
+
+input[type="checkbox"]{
+  margin-right: 10px;
+}
+
+.inputCheckbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
