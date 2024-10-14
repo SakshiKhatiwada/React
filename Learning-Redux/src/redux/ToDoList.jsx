@@ -3,7 +3,7 @@ import TodoItem from './TodoItem';
 
 const ToDoList = () => {
     const todos = useSelector((state)=> state.todoItems);
-    console.log('todos: ',todos);
+    // console.log('todos: ',todos);
     //name: todoItems
   return (
     <>
