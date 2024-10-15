@@ -1,6 +1,6 @@
 //Slice -> give us a way to store a piece, or slice, of data, and gives us all the things we need to change and retrieve the data.
 
-import { createSlice } from '@reduxjs/toolkit';
+
 
 export const todoSlice = createSlice(
     
