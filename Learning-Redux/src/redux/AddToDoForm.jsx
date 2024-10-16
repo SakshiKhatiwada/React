@@ -1,6 +1,6 @@
 import { memo, useState } from 'react'
 import {useDispatch} from 'react-redux';
-import { addTodo } from './todoSlice';
+import { addTodo, addTodoAsync } from './todoSlice';
 
 
 function AddToDoForm() {
@@ -8,17 +8,28 @@ function AddToDoForm() {
     const dispatch = useDispatch();
 
     //submit func
+    // const onSubmit = (event) => {
+    //     event.preventDefault();
+    //     if (value) {
+    //         //ANCHOR dispatch is called here!
+    //         dispatch(
+    //             addTodo(
+    //                 {title: value}
+    //             )
+    //         )
+    //         setValue('');//clears value again
+    //         // alert('form submitted!');
+    //     }
+    // };
     const onSubmit = (event) => {
         event.preventDefault();
         if (value) {
             //ANCHOR dispatch is called here!
             dispatch(
-                addTodo(
+                addTodoAsync(
                     {title: value}
                 )
             )
-            setValue('');//clears value again
-            // alert('form submitted!');
         }
     };
 
