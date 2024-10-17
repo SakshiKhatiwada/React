@@ -32,6 +32,36 @@ export const addTodoAsync = createAsyncThunk('todos/addTodoAsync', async (payloa
   }
 });
 
+
+export const toggleCompleteAsync = createAsyncThunk('todos/completeTodoAsync', async (payload) =>{
+    const resp = await fetch(`http://localhost:7000/todos/${payload.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({completed: payload.completed})
+    });
+
+        if(resp.ok) {
+            const todo = await resp.json();
+            // console.log('todo obj', todo, );
+            return {todo}; //-> object destructuring
+        }
+
+}
+);
+
+export const deleteTodoAsync = createAsyncThunk('todos/deleteTodoAsync', async (payload)=> {
+    const resp = await fetch(`http://localhost:7000/todos/${payload.id}`, {
+        method: "DELETE",
+    })
+    
+    if(resp.ok){
+        return payload.id;
+    }
+});
+
+
 export const todoSlice = createSlice(
     
     
@@ -90,9 +120,24 @@ export const todoSlice = createSlice(
             extraReducers: (builder) => {
                 builder.addCase(getTodosAsync.fulfilled, (state, action) =>{
                 return action.payload.todos;
-                })
+                });
                 builder.addCase(addTodoAsync.fulfilled, (state, action) => {
                 state.push(action.payload.todo);
+                });
+
+
+                //toggleCompleteAsync
+                builder.addCase(toggleCompleteAsync.fulfilled, (state,action) => {
+                    const index = state.findIndex(todo => todo.id === action.payload.todo.id);
+                    // console.log('action.payload',action.payload);
+                    state[index].completed = action.payload.todo.completed;
+                });
+                //deleteTodoAsync
+                builder.addCase(deleteTodoAsync.fulfilled, (state, action) => {
+                    // console.log('action.payload',action.payload);
+                   return state.filter((todo)=> todo.id !== action.payload);
+                   //NOTE only action.payload for cases when we simply returned 1 value
+                
                 })
             }
     }

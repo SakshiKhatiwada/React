@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import TodoItem from './TodoItem';
 import { useEffect } from 'react';
-import { getTodosAsync } from './todoSlice';
+import { deleteTodoAsync, getTodosAsync, toggleCompleteAsync } from './todoSlice';
 
 const ToDoList = () => {
     const todos = useSelector((state)=> state.todoItems);
