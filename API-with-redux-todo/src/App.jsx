@@ -9,7 +9,7 @@ const state = useSelector(state=> state);
 if(state.todo.isLoading){
   return <h1>loading...</h1>
 }
-console.log(state);
+// console.log(state);
   return (
     <>
     <button onClick={e => dispatch(fetchTodos())}>Fetch todos</button>

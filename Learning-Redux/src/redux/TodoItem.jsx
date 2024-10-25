@@ -1,45 +1,49 @@
 import { useDispatch } from "react-redux";
-import { deleteTodo, toggleComplete } from "./todoSlice";
+import { deleteTodo, deleteTodoAsync, toggleComplete, toggleCompleteAsync } from "./todoSlice";
 
-const TodoItem = ({id,title,completed}) => {
+const TodoItem = ({ id, title, completed }) => {
 
   const dispatch = useDispatch();
 
   const handleCheckboxClick = () => {
-    dispatch(
-        toggleComplete({id, completed: !completed})
-    );
+    // dispatch(
+    //     toggleComplete({id, completed: !completed})
+    // );
+    dispatch(toggleCompleteAsync({ id, completed: !completed }));
+
   }
 
   const handleDeleteClick = () => {
-    dispatch(
-        deleteTodo({id})
-    );
+    // console.log('deleted');
+    // dispatch(
+    // deleteTodo({id})
+    // );
+    dispatch(deleteTodoAsync({id}));
   }
 
-    console.log('data:',id, title, completed);
+  // console.log('data:',id, title, completed);
   return (
     <div className="list-items">
-    {/* <p>  ID: {id} </p>
+      {/* <p>  ID: {id} </p>
     <p> Title: <b>{title}</b></p>
     <p> Completed: {`${completed}`}</p> */}
-       {/* since it is boolean, it's not shown in UI directly -> we retrieve its value as string */}
-        {/* <br/> */}
+      {/* since it is boolean, it's not shown in UI directly -> we retrieve its value as string */}
+      {/* <br/> */}
 
-        <span className="inputCheckbox">
-          <input
+      <span className="inputCheckbox">
+        <input
           type="checkbox"
           className="check"
-          onClick={handleCheckboxClick}
+          onChange={handleCheckboxClick}
           checked={completed}
-          /> 
-        {title} 
+        />
+        {title}
         {/* {completed ? "\u2714" : "\u274C"} */}
-        </span>
-        <button className="deleteButton"
+      </span>
+      <button className="deleteButton"
         onClick={handleDeleteClick}
-        >Delete</button>
-        
+      >Delete</button>
+
     </div>
   )
 }
