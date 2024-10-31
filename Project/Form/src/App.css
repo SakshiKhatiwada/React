@@ -1,16 +1,45 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
 form {
  max-width: fit-content;
   background-color: antiquewhite;
-  padding: 10px;
-  margin: auto;
+  border-radius: 10px;
+  padding: 25px;
+  margin:100px auto;
+  min-height: fit-content;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 20px;
+  box-shadow: 2px 2px 2px 3px rgba(0,0,0,0.2), -2px -2px 2px 3px rgba(255, 255, 255, 0.2) inset;
 
   input {
     border-radius: 10px;
     padding: 10px 15px;
     border: none;
+    color: black;
+    background-color: white;
+    box-shadow: 2px 2px 2px 3px rgba(0,0,0,0.2), -2px -2px 2px 3px rgba(255, 255, 255, 0.2) inset;
   }
+}
+
+::placeholder{
+  color: black;
+  opacity: 0.8;
+}
+
+form div{
+  border: 1px solid grey;
+  padding: 13px 8px;
+  border-radius: 8px;
+  background-color: rgba(164, 107, 32, 0.468);
+}
+
+input[type="submit"]{
+  background-color: green;
+  cursor: pointer;
 }

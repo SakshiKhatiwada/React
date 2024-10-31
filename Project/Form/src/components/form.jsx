@@ -11,6 +11,7 @@ export default function ContactForm(){
    const response = await axios.post(url, data);
    console.log(response.data);
    alert("form submitted successfully!");
+
    }catch(err){
     console.log('error:', err);
     alert("error while submitting!");
@@ -26,19 +27,19 @@ export default function ContactForm(){
             <input id="name" placeholder="enter your name: " type="text" {...register("name", {required: true, minLength: 3})}/>
         </div>
 
-        {errors.name && <p>Name must be at least 3 characters!</p>}
+        {errors.name && <p>⚠️ Name must be at least 3 characters!</p>}
         
         <div>
             <label htmlFor='email'>Enter your email: </label>
             <input id="email" type='email' placeholder="enter your email: " {...register("email",{required: true})}/>
         </div>
 
-        {errors.email && <p>Please write a valid Email!</p>}
+        {errors.email && <p> ⚠️ Please write a valid Email!</p>}
         <div>
             <label htmlFor='message'>Enter your message: </label>
             <input id="message" type='text' placeholder="enter your message: " {...register("message",{required: true, minLength: 10})}/>
         </div>
-        {errors.message && <p>Message must be at least 10 characters!</p>}
+        {errors.message && <p>⚠️ Message must be at least 10 characters!</p>}
 
         <input type="submit" value="submit"/>
 
