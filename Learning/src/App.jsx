@@ -2,6 +2,7 @@
 import './App.css'
 import Comp3 from './useContext/Comp3'
 import ContextProvider from './useContext/file3'
+import VideoCard from './workshop-code/Vcard'
 // import Comp1 from './useContext/w-useContext'
 // import UseStateHook from './practice1/hooks/useState'
 // import Component1 from './useContext/wo-useContext'
@@ -21,9 +22,12 @@ function App() {
     {/* <Comp1/> */}
 
 {/* provider function here */}
-    <ContextProvider>
+    {/* <ContextProvider>
         <Comp3/>
-    </ContextProvider>
+    </ContextProvider> */}
+
+    {/* Workshop */}
+    <VideoCard/>
     </>
   )
 }
